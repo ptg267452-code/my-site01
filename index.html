@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>芃禾國際｜台北車站街友關懷行動</title>
+  <meta name="description" content="芃禾國際於台北車站發放便當與物資，號召更多夥伴加入志工行列，傳遞溫暖與希望。">
+  <style>
+    :root{
+      --brand:#e68ca4; --ink:#333; --bg:#fafafa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Microsoft JhengHei",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.75}
+    header{background:var(--brand);color:#fff;text-align:center;padding:2.25rem 1rem}
+    header h1{margin:0 0 .25rem;font-size:clamp(22px,4vw,34px)}
+    header p{margin:0;opacity:.95}
+    .container{max-width:980px;margin:auto;padding:2rem 1.25rem}
+    h2{color:var(--brand);margin:1.5rem 0 .5rem}
+    p{margin:.5rem 0 1rem}
+
+    /* Carousel */
+    .carousel{
+      position:relative;overflow:hidden;border-radius:14px;background:#000;
+      box-shadow:0 6px 18px rgba(0,0,0,.15);margin:1.25rem 0 2rem;
+    }
+    .track{display:flex;transition:transform .6s ease}
+    .slide{min-width:100%;height:54vw;max-height:520px;position:relative}
+    .slide img{width:100%;height:100%;object-fit:cover;display:block}
+    .caption{
+      position:absolute;left:0;right:0;bottom:0;padding:.6rem 1rem;
+      color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.6) 60%,rgba(0,0,0,.75));
+      font-size:.95rem
+    }
+    .ctrl{
+      position:absolute;top:50%;transform:translateY(-50%);
+      background:rgba(0,0,0,.45);border:none;color:#fff;width:42px;height:42px;
+      border-radius:50%;display:grid;place-items:center;cursor:pointer
+    }
+    .ctrl:hover{background:rgba(0,0,0,.6)}
+    .prev{left:.6rem} .next{right:.6rem}
+
+    .dots{position:absolute;left:0;right:0;bottom:.5rem;display:flex;gap:.4rem;justify-content:center}
+    .dot{
+      width:9px;height:9px;border-radius:50%;
+      background:rgba(255,255,255,.45);border:0;cursor:pointer
+    }
+    .dot.active{background:#fff}
+
+    /* Grid of two supporting photos (fallback if you want) */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .grid img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+
+    /* CTA */
+    .cta{background:var(--brand);color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem;border-radius:12px}
+    .cta h2{color:#fff;margin:.1rem 0 1rem}
+    .cta a{display:inline-block;background:#fff;color:var(--brand);text-decoration:none;border-radius:999px;
+      padding:.8rem 1.5rem;font-weight:700}
+    .cta a:hover{background:#ffe6ec}
+
+    /* Accessibility (prefers-reduced-motion) */
+    @media (prefers-reduced-motion:reduce){
+      .track{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>芃禾國際 愛心關懷行動</h1>
+    <p>台北車站街友發放便當與物資 — 讓城市更有溫度</p>
+  </header>
+
+  <main class="container">
+    <h2>愛在行動中</h2>
+    <p>
+      志工們穿上粉紅背心，帶著熱騰騰的便當與生活物資，沿著台北車站周邊一戶戶關懷。
+      每一份餐點、每一句問候，都是「你不孤單」的承諾。
+    </p>
+
+    <!-- Carousel -->
+    <section class="carousel" aria-roledescription="carousel" aria-label="活動照片集">
+      <div class="track" id="track">
+        <figure class="slide">
+          <img src="22e724b1-5fc4-49fd-8740-4d575e51d8c9.png" alt="志工於車站集合，準備出發關懷行動" />
+          <figcaption class="caption">志工集結：微笑與粉紅背心，是今晚最亮的顏色。</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="d3fcc81c-6586-4033-91dc-b0ef7ed40ded.png" alt="志工親手把便當交到長者手中" />
+          <figcaption class="caption">把溫熱與尊重，雙手交付。</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="7ef21f36-3d58-4635-aa16-74631217ca81.png" alt="街友坐在花壇旁，接過愛心便當" />
+          <figcaption class="caption">一句「謝謝」讓彼此都被看見。</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="eea27928-843e-49c8-b723-aceaafb52d8d.png" alt="志工在街頭分送物資與便當" />
+          <figcaption class="caption">行動中的溫度，延伸成城市的光。</figcaption>
+        </figure>
+      </div>
+
+      <!-- controls -->
+      <button class="ctrl prev" aria-label="上一張" id="prev" title="上一張">❮</button>
+      <button class="ctrl next" aria-label="下一張" id="next" title="下一張">❯</button>
+
+      <!-- dots -->
+      <div class="dots" role="tablist" aria-label="照片指示點">
+        <button class="dot active" aria-label="第 1 張" data-idx="0"></button>
+        <button class="dot" aria-label="第 2 張" data-idx="1"></button>
+        <button class="dot" aria-label="第 3 張" data-idx="2"></button>
+        <button class="dot" aria-label="第 4 張" data-idx="3"></button>
+      </div>
+    </section>
+
+    <h2>一份力量，無限延伸</h2>
+    <p>
+      我們相信：被看見的人就有希望。透過每次關懷，串起互助的網絡，也讓更多人願意踏出第一步，一起把愛送到需要的地方。
+    </p>
+
+    <section class="grid" aria-label="活動花絮">
+      <img src="d3fcc81c-6586-4033-91dc-b0ef7ed40ded.png" alt="志工與長者互動花絮">
+      <img src="7ef21f36-3d58-4635-aa16-74631217ca81.png" alt="志工遞上便當，街友露出笑容">
+    </section>
+
+    <section class="cta">
+      <h2>💖 一起加入芃禾志工隊</h2>
+      <p>成為志工、捐贈物資或分享訊息，都是最美的支持。</p>
+      <a href="#" aria-label="前往加入或捐助">立即參與</a>
+    </section>
+  </main>
+
+  <script>
+    // 基本輪播邏輯（自動 + 點擊 + 觸控滑動）
+    const track = document.getElementById('track');
+    const slides = Array.from(track.children);
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let idx = 0, timer, isPaused = false;
+
+    function go(n){
+      idx = (n + slides.length) % slides.length;
+      track.style.transform = `translateX(-${idx*100}%)`;
+      dots.forEach((d,i)=>d.classList.toggle('active', i===idx));
+    }
+    function autoplay(){
+      clearInterval(timer);
+      timer = setInterval(()=>{ if(!isPaused) go(idx+1); }, 3800);
+    }
+    prev.addEventListener('click', ()=>{ go(idx-1); autoplay(); });
+    next.addEventListener('click', ()=>{ go(idx+1); autoplay(); });
+    dots.forEach(d=>d.addEventListener('click', e=>{ go(+e.target.dataset.idx); autoplay(); }));
+
+    // 暫停/恢復（滑鼠移入、頁籤隱藏）
+    track.addEventListener('mouseenter', ()=>isPaused=true);
+    track.addEventListener('mouseleave', ()=>isPaused=false);
+    document.addEventListener('visibilitychange', ()=>{ isPaused = document.hidden; });
+
+    // 觸控滑動
+    let x0=null;
+    track.addEventListener('touchstart', e=>{ x0=e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchmove', e=>{
+      if(x0===null) return;
+      const dx = e.touches[0].clientX - x0;
+      if(Math.abs(dx)>40){ go(idx + (dx<0?1:-1)); x0=null; autoplay(); }
+    }, {passive:true});
+    track.addEventListener('touchend', ()=>{ x0=null; });
+
+    // 初始
+    go(0); autoplay();
+  </script>
+</body>
+</html>
