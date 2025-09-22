@@ -3,8 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>芃禾國際｜台北車站街友關懷行動</title>
-  <meta name="description" content="芃禾國際於台北車站發放便當與物資，號召更多夥伴加入志工行列，傳遞溫暖與希望。">
+
+  <!-- SEO -->
+  <title>芃禾國際｜官方網站｜台北車站街友關懷行動</title>
+  <meta name="description" content="芃禾國際官方網站：在台北車站發放便當與物資，邀請志工一同參與關懷行動，讓愛被看見、把善傳下去。">
+  <link rel="canonical" href="https://ptg267452-code.github.io/my-site01/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="芃禾國際">
+  <meta property="og:title" content="芃禾國際｜台北車站街友關懷行動">
+  <meta property="og:description" content="芃禾國際在台北車站發放便當與物資，邀請你一起加入志工行列，讓城市更有溫度。">
+  <meta property="og:url" content="https://ptg267452-code.github.io/my-site01/">
+  <meta property="og:image" content="https://i.postimg.cc/bwmmdfLh/8.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="芃禾國際｜台北車站街友關懷行動">
+  <meta name="twitter:description" content="邀請你一起加入志工行列，讓城市更有溫度。">
+  <meta name="twitter:image" content="https://i.postimg.cc/bwmmdfLh/8.jpg">
+
+  <!-- JSON-LD 結構化資料 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "芃禾國際",
+    "url": "https://ptg267452-code.github.io/my-site01/",
+    "logo": "https://i.postimg.cc/bwmmdfLh/8.jpg",
+    "sameAs": ["https://line.me/ti/p/wJDAdvweBC"]
+  }
+  </script>
+
   <style>
     :root{ --brand:#e68ca4; --ink:#333; --bg:#fafafa; }
     *{ box-sizing:border-box }
@@ -17,77 +47,44 @@
     p{ margin:.5rem 0 1rem }
 
     /* Carousel */
-    .carousel{
-      position:relative; overflow:hidden; border-radius:14px; background:#000;
-      box-shadow:0 6px 18px rgba(0,0,0,.15); margin:1.25rem 0 2rem; user-select:none;
-    }
-    .track{
-      display:flex; transition:transform .6s ease; padding:0; gap:0; will-change:transform;
-    }
-    .slide{
-      /* 重要：figure 有預設 margin，務必歸零 */
-      margin:0;
-      flex:0 0 100%;          /* 每張固定 100% 寬 */
-      width:100%;
-      height:60vh;            /* 可改 54vw 或固定 520px */
-      max-height:560px;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#000;
-    }
-    .slide img{
-      width:auto; max-width:100%; max-height:100%; height:auto;
-      object-fit:contain; display:block;
-    }
-    .caption{
-      position:absolute; left:0; right:0; bottom:0; padding:.6rem 1rem;
-      color:#fff; background:linear-gradient(180deg,transparent,rgba(0,0,0,.6) 60%,rgba(0,0,0,.75));
-      font-size:.95rem
-    }
-    .ctrl{
-      position:absolute; top:50%; transform:translateY(-50%);
-      background:rgba(0,0,0,.45); border:none; color:#fff; width:42px; height:42px;
-      border-radius:50%; display:grid; place-items:center; cursor:pointer
-    }
+    .carousel{ position:relative; overflow:hidden; border-radius:14px; background:#000; box-shadow:0 6px 18px rgba(0,0,0,.15); margin:1.25rem 0 2rem; user-select:none; }
+    .track{ display:flex; transition:transform .6s ease; padding:0; gap:0; will-change:transform; }
+    .slide{ margin:0; flex:0 0 100%; width:100%; height:60vh; max-height:560px; position:relative; display:flex; align-items:center; justify-content:center; background:#000; }
+    .slide img{ width:auto; max-width:100%; max-height:100%; height:auto; object-fit:contain; display:block; }
+    .caption{ position:absolute; left:0; right:0; bottom:0; padding:.6rem 1rem; color:#fff; background:linear-gradient(180deg,transparent,rgba(0,0,0,.6) 60%,rgba(0,0,0,.75)); font-size:.95rem }
+    .ctrl{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.45); border:none; color:#fff; width:42px; height:42px; border-radius:50%; display:grid; place-items:center; cursor:pointer }
     .ctrl:hover{ background:rgba(0,0,0,.6) }
     .prev{ left:.6rem } .next{ right:.6rem }
-
-    .dots{
-      position:absolute; left:0; right:0; bottom:.5rem; display:flex; gap:.4rem; justify-content:center
-    }
-    .dot{
-      width:9px; height:9px; border-radius:50%;
-      background:rgba(255,255,255,.45); border:0; cursor:pointer
-    }
+    .dots{ position:absolute; left:0; right:0; bottom:.5rem; display:flex; gap:.4rem; justify-content:center }
+    .dot{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.45); border:0; cursor:pointer }
     .dot.active{ background:#fff }
 
+    /* 活動花絮：保持比例 */
     .grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px }
-    .grid img{ width:100%; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.12) }
+    .grid img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.12) }
 
+    /* CTA */
     .cta{ background:var(--brand); color:#fff; text-align:center; padding:2rem 1rem; margin-top:2rem; border-radius:12px }
     .cta h2{ color:#fff; margin:.1rem 0 1rem }
     .cta a{ display:inline-block; background:#fff; color:var(--brand); text-decoration:none; border-radius:999px; padding:.8rem 1.5rem; font-weight:700 }
     .cta a:hover{ background:#ffe6ec }
-
     @media (prefers-reduced-motion:reduce){ .track{ transition:none } }
   </style>
 </head>
 <body>
   <header>
-    <h1>芃禾國際 愛心關懷行動</h1>
-    <p>台北車站街友發放便當與物資 — 讓城市更有溫度</p>
+    <h1>芃禾國際｜愛心關懷行動</h1>
+    <p>在台北車站發放便當與物資 — 讓城市更有溫度</p>
   </header>
 
   <main class="container">
     <h2>愛在行動中</h2>
     <p>
-      志工們穿上粉紅背心，帶著熱騰騰的便當與生活物資，沿著台北車站周邊一戶戶關懷。
+      芃禾國際志工穿上粉紅背心，帶著熱騰騰的便當與生活物資，沿著台北車站周邊一戶戶關懷。
       每一份餐點、每一句問候，都是「你不孤單」的承諾。
     </p>
 
-    <!-- Carousel -->
+    <!-- 輪播 -->
     <section class="carousel" aria-roledescription="carousel" aria-label="活動照片集">
       <div class="track" id="track">
         <figure class="slide">
@@ -107,40 +104,39 @@
           <figcaption class="caption">行動中的溫度，延伸成城市的光。</figcaption>
         </figure>
       </div>
-
-      <button class="ctrl prev" aria-label="上一張" id="prev" title="上一張">❮</button>
-      <button class="ctrl next" aria-label="下一張" id="next" title="下一張">❯</button>
-
-      <div class="dots" role="tablist" aria-label="照片指示點">
-        <button class="dot active" aria-label="第 1 張" data-idx="0"></button>
-        <button class="dot" aria-label="第 2 張" data-idx="1"></button>
-        <button class="dot" aria-label="第 3 張" data-idx="2"></button>
-        <button class="dot" aria-label="第 4 張" data-idx="3"></button>
+      <button class="ctrl prev" id="prev">❮</button>
+      <button class="ctrl next" id="next">❯</button>
+      <div class="dots">
+        <button class="dot active" data-idx="0"></button>
+        <button class="dot" data-idx="1"></button>
+        <button class="dot" data-idx="2"></button>
+        <button class="dot" data-idx="3"></button>
       </div>
     </section>
 
     <h2>一份力量，無限延伸</h2>
     <p>
-      大家好，我是羅顯威，芃禾國際的創辦人。
-我是一個相信「一顆種子也能改變世界」的人，本身從事商務拓展，為什麼我會成立「芃禾國際」這個公益團隊，我曾經是某公益團隊的核心人物，很多人不知道公益公司是可以合法的拿所有善心人士的錢當做自己的薪水，每份愛心到手，實際到弱勢團體手上所剩無幾，應該說是變相的在合理化這些費用，這也就是為什麼我不上市、登記的原因，我希望每份錢都能夠實實在在的花在刀口上，更不想讓這份愛心變質
-
-芃禾國際現在也是一個非常大的團隊，每個分會都是不同的導師、領頭人來帶領，主要的目的希望大家把這個善的循環傳播下去，歡迎大家都加入到我的團隊，我們是有共同信念及興趣所以成為知心好友，把愛真正留給需要的人，而不是到有錢人手上
-
-「芃然共生，禾心為善」這是我們的初衷，希望往後我們大家都能把這八個字銘記在心，大力的推廣給大家，我們也都有許多活動，歡迎一同來參與，活動都會分享在FB粉專！！！
+      大家好，我是羅顯威，芃禾國際的創辦人。我相信「一顆種子也能改變世界」。
+      我們以透明公益為原則，將每一份捐款、每一次行動，確實用在需要的人身上。
+      目前芃禾國際已匯聚多個分會與導師，目標是把善的循環持續傳播下去。
+      「芃然共生，禾心為善」是我們的初衷，歡迎加入芃禾國際志工隊，一起把愛留給真正需要的人。
     </p>
 
+    <!-- 活動花絮 -->
     <section class="grid" aria-label="活動花絮">
       <img src="https://i.postimg.cc/Cxx0Jhkt/9.jpg" alt="志工與長者互動花絮">
       <img src="https://i.postimg.cc/wjGCVh6y/10.jpg" alt="志工遞上便當，街友露出笑容">
     </section>
 
+    <!-- CTA -->
     <section class="cta">
-      <h2>💖 一起加入芃禾志工隊</h2>
+      <h2>💖 一起加入芃禾國際志工隊</h2>
       <p>成為志工、捐贈物資或分享訊息，都是最美的支持。</p>
-      <a href="https://line.me/ti/p/wJDAdvweBC="前往加入或捐助" target="_blank">立即參與</a>
+      <a href="https://line.me/ti/p/wJDAdvweBC" target="_blank" rel="noopener" title="前往加入或捐助">立即參與</a>
     </section>
   </main>
 
+  <!-- 輪播JS -->
   <script>
     const track = document.getElementById('track');
     const slides = Array.from(track.children);
@@ -161,12 +157,9 @@
     prev.addEventListener('click', ()=>{ go(idx-1); autoplay(); });
     next.addEventListener('click', ()=>{ go(idx+1); autoplay(); });
     dots.forEach(d=>d.addEventListener('click', e=>{ go(+e.target.dataset.idx); autoplay(); }));
-
     track.addEventListener('mouseenter', ()=>isPaused=true);
     track.addEventListener('mouseleave', ()=>isPaused=false);
     document.addEventListener('visibilitychange', ()=>{ isPaused = document.hidden; });
-
-    // 觸控滑動
     let x0=null;
     track.addEventListener('touchstart', e=>{ x0=e.touches[0].clientX; }, {passive:true});
     track.addEventListener('touchmove', e=>{
@@ -175,13 +168,7 @@
       if(Math.abs(dx)>40){ go(idx + (dx<0?1:-1)); x0=null; autoplay(); }
     }, {passive:true});
     track.addEventListener('touchend', ()=>{ x0=null; });
-
-    // 初始化
     go(0); autoplay();
   </script>
 </body>
 </html>
-
-
-
-
