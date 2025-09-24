@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ptg267452-code.github.io/my-site01/sitemap.xml
+Sitemap: https://pengheco.com/sitemap.xml
